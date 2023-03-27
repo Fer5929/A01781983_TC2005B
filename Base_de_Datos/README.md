@@ -1,2 +1,2 @@
 # A01781983_TC2005B
-Repositorio para el trabajo de CONSTRUCCIÓN DE SOFTWARE Y TOMA DE DECISIONES 
+#Base de datos
