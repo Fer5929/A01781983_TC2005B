@@ -1,0 +1,66 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    background-color: rgb(255, 182, 193);
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    
+}
+/*Diseño de la galería*/
+.gallery { /*Contenedor*/
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .item {/*imagen y link*/
+    position: relative;
+    width: 30%; /* Adjust as needed */
+    margin: 20px;
+  }
+  
+  .item img { /*tamaño de la imagen*/
+    width: 100%;
+    height: auto;
+  }
+  
+  .overlay { /**/
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*hace que los elementos dentro de overlay cubran la imagen en su totalidad*/
+    width: 100%;
+    height: 100%;
+    /*hace los elementos invisibles*/
+    opacity: 0;
+    /*transición cuando haya un hover*/
+    transition: opacity 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay:hover { /*si el puntero se coloca sobre el item*/
+    opacity: 1;
+  }
+  
+  .overlay h3 { /*texto que se puso sobre la imagen*/
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .overlay a { /*link sobre la imagen*/
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+
