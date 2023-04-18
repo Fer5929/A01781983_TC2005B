@@ -1,0 +1,1 @@
+SELECT * FROM ITC501.prueba;
