@@ -26,8 +26,8 @@ public class ItemCollector : MonoBehaviour
     //19 bajar el using de TMPro para el texto 
     //20 arrastrar el "Sandia_TXT" al serializeField de player de este script
     //colisión
-    private int sandias = 0;//contador
-    [SerializeField] private TMP_Text sandiasTXT;
+    private int fruits = 0;//contador
+    [SerializeField] private TMP_Text fruitsTXT;
     [SerializeField] private AudioSource collector_SE;
     void OnTriggerEnter2D(Collider2D collision) //se usa porque pusimos que la sandia era un trigger en su boxcollider
     {
@@ -35,8 +35,15 @@ public class ItemCollector : MonoBehaviour
         if(collision.gameObject.CompareTag("Sandia"))//revisa si hubo una colisión con la sandia
         {
             Destroy(collision.gameObject);//elimina el objeto en cuestion
-            sandias ++;
-            sandiasTXT.text= "Fruits: "+sandias;
+            fruits ++;
+            fruitsTXT.text= "Fruits: "+fruits;
+            collector_SE.Play();
+        }
+         if(collision.gameObject.CompareTag("Valuable"))//revisa si hubo una colisión con la sandia
+        {
+            Destroy(collision.gameObject);//elimina el objeto en cuestion
+            fruits += 5;
+            fruitsTXT.text= "Fruits: "+fruits;
             collector_SE.Play();
         }
     }
