@@ -7,6 +7,7 @@ public class PlayerLife : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    [SerializeField] private AudioSource death_SE;
     // Start is called before the first frame update
     void Start()
     {   anim=GetComponent <Animator>();
@@ -20,12 +21,15 @@ public class PlayerLife : MonoBehaviour
             if(collision.gameObject.CompareTag("Trap_Spikes"))
             {
                 Die();
+                death_SE.Play();
             }
         }
     private void Die()
         {
+            
             anim.SetTrigger("death");
             rb.bodyType=RigidbodyType2D.Static; //evita que me pueda mover si me topo con un obstáculo
+            
         }
     private void RestartLevel()
     {

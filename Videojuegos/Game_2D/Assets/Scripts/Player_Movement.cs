@@ -15,6 +15,8 @@ public class Player_Movement : MonoBehaviour
 
     // variable to manage animation
     private enum MovementState {idle, running, jumping, falling};
+    //variable for jumping audiosource
+    [SerializeField] private AudioSource jump_SE;
 
     //para IsGrounded se busca una referencia al boxcollider
     private BoxCollider2D coll;
@@ -35,6 +37,7 @@ public class Player_Movement : MonoBehaviour
        if(Input.GetButtonDown("Jump")&&IsGrounded())
        {
            rb.velocity = new Vector2(rb.velocity.x,jumpForce); 
+           jump_SE.Play();
        }
        
         UpdateAnimation();

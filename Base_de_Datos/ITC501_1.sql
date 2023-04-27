@@ -48,9 +48,33 @@ SELECT id, name FROM sakila.customer_list ORDER BY id ASC LIMIT 10, 5; -- a part
 
 -- INSERT se usa para agregar nuevos datos a una tabla existente
 INSERT INTO sakila.language
-VALUES (NULL,'Japanese',NOW());
+VALUES (NULL,'Japanese',NOW());-- el null se percibe como un vacío por el autoincrement, solito el sistema pone los números en id 
 SELECT * FROM sakila.language;
 
 -- SELECT MAX(language_id) FROM sakila.language -- MAX me da el último id 
 INSERT INTO sakila.language
 VALUES (9,'Russian','2020-09-26 10:35:00');
+DESC sakila.language -- Descripción de language, podemos ver que tiene 3 columnas id, name y last_update
+SELECT * FROM sakila.language
+
+INSERT INTO sakila.language VALUES (NULL, 'Spanish', NOW()), (NULL, 'Hebrew',NOW());-- Multiples inserciones
+
+INSERT INTO sakila.language(name,last_update) VALUES('Hungarian',NOW()); -- Me permite insertar valores determinados, como tal en este caso
+-- la columna de id cuenta con el autoincrement por lo que no es necesario ponerl el id. 
+
+-- con la forma anterior no necesito darle el valor a las columnas en cierto orde
+INSERT INTO sakila.language(last_update,name) VALUES(NOW(),'Castellano');
+
+-- Lo anterior se puede hacer múltiple
+INSERT INTO sakila.language(name,last_update) VALUES ('Checo', NOW()),('Catalan',NOW()),('Sueco',NOW());
+
+-- otro ejemplo en la tabla de city
+SELECT *  FROM sakila.city;
+INSERT INTO sakila.city (city, country_id) VALUES 
+('Sao Carlos' ,19),
+('Araraquara',19),
+('Riberirao',19);
+SELECT *  FROM sakila.city WHERE country_id=19;
+
+-- otra forma 
+INSERT INTO sakila.language SET name='German',last_update=NOW();
