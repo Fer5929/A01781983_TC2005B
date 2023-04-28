@@ -18,7 +18,7 @@ public class Checkpoint : MonoBehaviour
         {
             checkpoint_SE.Play();
             levelCompeleted=true;
-            Invoke("CompleteLevel",2f);
+            Invoke("CompleteLevel",1f);
             //llama al nivel después de dos segundos
         }
     }
