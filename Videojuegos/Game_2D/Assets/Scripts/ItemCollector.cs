@@ -29,6 +29,7 @@ public class ItemCollector : MonoBehaviour
     private int fruits = 0;//contador
     [SerializeField] private TMP_Text fruitsTXT;
     [SerializeField] private AudioSource collector_SE;
+    [SerializeField] private AudioSource thief_SE;
     void OnTriggerEnter2D(Collider2D collision) //se usa porque pusimos que la sandia era un trigger en su boxcollider
     {
         
@@ -45,6 +46,21 @@ public class ItemCollector : MonoBehaviour
             fruits += 5;
             fruitsTXT.text= "Fruits: "+fruits;
             collector_SE.Play();
+        }
+        if(collision.gameObject.CompareTag("Thief"))//revisa si hubo una colisión con la sandia
+        {
+            fruits --;
+            if(fruits <= 0)
+            {
+                fruits=0;
+                fruitsTXT.text= "Fruits: "+fruits;
+            }
+            else
+            {
+                fruitsTXT.text= "Fruits: "+fruits;
+            }
+            
+            thief_SE.Play();
         }
     }
 }
