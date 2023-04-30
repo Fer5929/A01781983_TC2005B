@@ -430,8 +430,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Fernanda Colomo - A01781983\nValeria Mart\xEDnez - A01782413\nSamantha
-    Covarrubias - A01026174"
+  m_text: 'Fernanda Colomo - A01781983
+
+    Valeria Martinez - A01782413
+
+    Samantha
+    Covarrubias - A01026174'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 16a06a399c6314b7fa0a54e450a71a0c, type: 2}
   m_sharedMaterial: {fileID: 7154810903242174804, guid: 16a06a399c6314b7fa0a54e450a71a0c, type: 2}
