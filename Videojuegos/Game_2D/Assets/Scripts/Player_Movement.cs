@@ -70,7 +70,7 @@ public class Player_Movement : MonoBehaviour
        {
         state=MovementState.falling;
        }
-       anim.SetInteger("state",(int)state);
+       anim.   SetInteger("state",(int)state);
 }
 //ground check, permite que el jugador solo salte una vez revisando si ya tocó el piso
 private bool IsGrounded ()
